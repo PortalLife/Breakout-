@@ -6,15 +6,14 @@
 var ctx; //These variables are used for controlling and drawing to the canvas.
 var x = 200;
 var y = 350; // This x and y determine the starting position of the ball.
+
 var dx = 10;
 var dy = 10; // Delta X and Y to determine the direction of the ball.
+
 var WIDTH;
 var HEIGHT; // Width and height of the game world itself (Not the canvas)
+
 var score = 0;
-
-
-// Variable for the music
-var music = document.getElementById("mySong");
 
 // Variables for eyes
 var eyesXL;
@@ -96,15 +95,6 @@ function LoadGame() {
 
 }
 
-
-function playSong() {
-    music.play();
-}
-
-function stopSong() {
-    music.pause();
-}
-
 function circle(x, y, r) {
     ctx.beginPath();
     ctx.arc(x, y, r, 0, Math.PI * 2, true);
@@ -130,7 +120,6 @@ function onKeyDown(evt) {
         rightDown = true;
     else if (evt.keyCode == 37)
         leftDown = true;
-
 }
 
 function onKeyUp(evt) {
@@ -138,7 +127,6 @@ function onKeyUp(evt) {
         rightDown = false;
     else if (evt.keyCode == 37)
         leftDown = false;
-
 }
 
 $(document).keydown(onKeyDown);
@@ -188,7 +176,6 @@ function drawScaledAnim(dScale) {
     ctx.restore();
 }
 
-
 function draw() {
 
     if (GamePlaying)
@@ -200,11 +187,7 @@ function draw() {
         ctx.fillStyle = 'white';
         circle(x, y, ballr);
 
-
         dScale = (eyesY - y) / 100;
-
-
-
 
         if (rightDown)
             paddlex += 10;
@@ -223,7 +206,6 @@ function draw() {
 
         eyeAngle = Math.atan2(dyEyeAndBall, dxEyeAndBall);
 
-
         // drawing the eyes
         ctx.fillStyle = "#A3D1FF";
         circle(eyesXL, eyesY, 6);
@@ -238,9 +220,6 @@ function draw() {
         colwidth = BRICKWIDTH + PADDING;
         row = Math.floor(y / rowheight);
         col = Math.floor(x / colwidth);
-
-
-
 
         //reverse the ball and mark the brick as broken
         if (y < NROWS * rowheight && row >= 0 && col >= 0 && bricks[row][col] == 1) {
@@ -319,7 +298,6 @@ function draw() {
         ctx.fillText("You win!", 200, 350);
 
     }
-
 }
 LoadGame();
 LoadBricks();
