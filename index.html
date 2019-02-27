@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Breakout++</title> 
+    <style>
+        
+        #canvas-container {
+   width: 100%;
+   text-align: center;
+}
+
+canvas {
+   display: inline; 
+   border: 3px solid white;
+}
+body  {
+   background-color: darkcyan
+}
+
+#score
+{
+    font-family: Verdana;
+    text-align: center;
+}
+    </style>
+    
+    </head>
+  <body>
+              <div id="canvas-container">
+    <canvas id="myCanvas" width="800" height="600"></canvas>
+            </div>
+      
+      <div id="score">
+    
+      </div>
+ 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> 
+<audio id="mySong">
+    <source src="bensound-scifi.mp3" type="audio/mpeg">
+</audio>
+
+ <script src="game.js">
+ </script>
+    
+  </body>
+</html> 
